@@ -1,0 +1,31 @@
+ScrollBothDn:
+  WinActivate,  ahk_class FrameFamily9.MdiFrame
+  WinActivate,  ahk_class FrameFamily10.MdiFrame
+  WinActivate,  ahk_class FrameFamily11.MdiFrame
+  WinActivate,  ahk_class FrameFamily12.MdiFrame
+  Send, {PgDn}                          ; scroll this down
+  Send, ^{Tab}                          ; switch to other doc window
+  Send, {PgDn}                          ; scroll this down
+  Send, ^{Tab}                          ; switch to first doc window
+Return
+
+ScrollBothUp:
+  WinActivate,  ahk_class FrameFamily9.MdiFrame
+  WinActivate,  ahk_class FrameFamily10.MdiFrame
+  WinActivate,  ahk_class FrameFamily11.MdiFrame
+  WinActivate,  ahk_class FrameFamily12.MdiFrame
+  Send, {PgUp}                          ; scroll this down
+  Send, ^{Tab}                          ; switch to other doc window
+  Send, {PgUp}                          ; scroll this down
+  Send, ^{Tab}                          ; switch to first doc window
+Return
+I have implemented this in a small Utility TextHelper .
+
+ 
+
+If You want to scroll by page rather by screen (you need to have the same zoom level though) - you can set up a small customui.cfg for the fminit folder:
+
+<Modify GotoPreviousScreen<KeySequence /F11>>
+<Modify GotoNextScreen  <KeySequence /F12>>
+<Modify GotoPreviousPage <KeySequence /PgUp>>
+<Modify GotoNextPage  <KeySequence /PgDn>>
